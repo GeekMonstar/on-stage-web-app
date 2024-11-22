@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
+import {Hind_Vadodara} from "next/font/google";
+import MainLayoutContainer from "@/layouts/mainLayoutContainer";
+import "./globals.scss";
+import UserContextProvider from "@/contexts/userContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -12,6 +15,14 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+
+const hindVandodara = Hind_Vadodara({
+  variable: "--font-hind-vadodara",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+})
+
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,8 +36,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <body className={`${hindVandodara.variable} ${geistSans.variable} ${geistMono.variable}`}>
+        <UserContextProvider>
+          <MainLayoutContainer>
+            {children}
+          </MainLayoutContainer>
+        </UserContextProvider>
       </body>
     </html>
   );

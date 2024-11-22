@@ -1,0 +1,44 @@
+$primary-color-1: #9D0DA4;
+$primary-color-2: #40019E;
+$light-color: #F4F4F4;
+$dark-color: #333;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Hind Vadodara", sans-serif;
+}
+
+body{
+  overflow: hidden;
+}
+
+.btn{
+  width: fit-content;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  &.btn-primary{
+    background: linear-gradient(45deg, #9D0DA4, #40019E);
+    color: $light-color;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    &:hover{
+      background: linear-gradient(45deg, #40019E, #9D0DA4);
+    }
+  }
+  &.white-btn-primary{
+    background: $light-color;
+    color: $primary-color-1;
+    border: 1px solid $primary-color-1;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    &:hover{
+      background: $primary-color-1;
+      color: $light-color;
+    }
+  }
+}
