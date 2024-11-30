@@ -12,8 +12,8 @@ export default function Home() {
   const router = useRouter();
   const searchParams = useSearchParams();
   useEffect(() => {
-    const storedUser = JSON.parse(localStorage.getItem("user"));
-    const storedAccount = JSON.parse(localStorage.getItem("account"));
+    const storedUser = JSON.parse(localStorage.getItem("user") as string);
+    const storedAccount = JSON.parse(localStorage.getItem("account") as string);
     if(storedUser && storedAccount){
       onChangeContext(storedUser, storedAccount);
     }

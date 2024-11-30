@@ -1,7 +1,22 @@
 .main-layout{
+    height: 100vh;
     &__container{
         display: flex;
-        flex-direction: column;
-        min-height: 100vh;
+        flex-direction: column-reverse;
+        height: calc(100% - 50px);
+        &--content{
+            height: 100%;
+            flex-grow: 10;
+        }
     }
+}
+
+@media screen and (min-width: 768px){
+    .main-layout{
+        flex-direction: row;
+        &__container{
+            flex-direction: row;
+        }
+    }
+    
 }

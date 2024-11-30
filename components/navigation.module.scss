@@ -1,10 +1,7 @@
 .nav__container{
     z-index: 10;
-    position: fixed;
     overflow: hidden;
     width: 100%;
-    transform: translateY(-100%);
-    top: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background: #FFF;
     &.disabled{

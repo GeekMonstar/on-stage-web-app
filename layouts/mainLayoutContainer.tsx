@@ -7,9 +7,11 @@ export default function MainLayoutContainer({ children }: { children: React.Reac
     return (
         <div className={styles["main-layout"]}>
             <MainLayoutHeader />
-            <div className={styles["main-layout__caontainer"]}>
+            <div className={styles["main-layout__container"]}>
                 <Navigation />
-                {children}
+                <div className={styles["main-layout__container--content"]}>
+                    {children}
+                </div>
             </div>
         </div>
     );
